@@ -1,13 +1,13 @@
+require('dotenv/config');
+
 const express = require('express');
 const expressListRoutes = require('express-list-routes');
-var cors = require('cors')
-require('dotenv/config');
+const cors = require('cors')
 const bodyParser = require('body-parser');
 const errorHandler = require('./src/middlewares/error')
+const { color, log, red, green, cyan, cyanBright } = require('console-log-colors');
 
 const app = express();
-
-app.use(cors())
 
 // Body parser
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 // app.use(hpp())
 
 // Enable CORS
-// app.use(cors())
+app.use(cors())
 
 // Public static file
 app.use(express.static('src/images/public'))
@@ -44,6 +44,6 @@ app.use(errorHandler)
 expressListRoutes(app)
 
 app.listen(process.env.PORT || '4000', () => {
-    console.log(`Server is running on port: ${process.env.PORT || '3000'}`);
+    console.log(green(`Server is running on port: ${process.env.PORT || '3000'}`));
 })
 

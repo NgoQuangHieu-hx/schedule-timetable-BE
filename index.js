@@ -1,4 +1,5 @@
 const express = require('express');
+const expressListRoutes = require('express-list-routes');
 var cors = require('cors')
 require('dotenv/config');
 const bodyParser = require('body-parser');
@@ -39,6 +40,10 @@ require('./src/routers/routers')(app);
 // Middleware error handler
 app.use(errorHandler)
 
+// List all routes
+expressListRoutes(app)
+
 app.listen(process.env.PORT || '4000', () => {
     console.log(`Server is running on port: ${process.env.PORT || '3000'}`);
 })
+

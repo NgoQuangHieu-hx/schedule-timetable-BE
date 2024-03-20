@@ -1,5 +1,4 @@
 const { successResponse, errorResponse } = require('../../utils/responseModel')
-const categoryRepository = require('../../repositories/category.repository')
 const constants = require('../../utils/constants')
 const asyncHandler = require('../../middlewares/async')
 const Admin = require('../../models/admin')

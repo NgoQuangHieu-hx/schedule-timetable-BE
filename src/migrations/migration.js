@@ -8,7 +8,7 @@ const ProductImage = require('../models/productImage');
 const OrderHistory = require('../models/orderHistory');
 const OrderHistoryDetail = require('../models/orderHistoryDetail');
 const SystemSetting = require('../models/systemSetting');
-const Blacklist = require('../models/blacklist');
+// const Blacklist = require('../models/blacklist');
 
 async function createMigration() {
     try {
